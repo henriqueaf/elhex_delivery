@@ -32,18 +32,27 @@ defmodule ElhexDelivery.PostalCode.Navigator do
 
     case Cache.get_distance(from, to) do
       nil ->
-        {lat1, long1} = get_geolocation(from)
-        {lat2, long2} = get_geolocation(to)
+        try do
+          {lat1, long1} = get_geolocation(from)
+          {lat2, long2} = get_geolocation(to)
 
-        distance = calculate_distance({lat1, long1}, {lat2, long2})
-        Cache.set_distance(from, to, distance)
-        distance
+          distance = calculate_distance({lat1, long1}, {lat2, long2})
+          Cache.set_distance(from, to, distance)
+          distance
+        rescue
+          e in RuntimeError -> e.message
+        end
       distance -> distance
     end
   end
 
   defp get_geolocation(postal_code) do
-    Store.get_geolocation(postal_code)
+    case Store.get_geolocation(postal_code) do
+      nil ->
+        error = "postal_code not found, received: (#{postal_code})"
+        raise RuntimeError, error
+      geolocation -> geolocation
+    end
   end
 
   defp format_postal_code(postal_code) when is_binary(postal_code), do: postal_code
