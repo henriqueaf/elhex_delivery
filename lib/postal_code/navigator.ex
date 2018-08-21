@@ -4,7 +4,7 @@ defmodule ElhexDelivery.PostalCode.Navigator do
   alias ElhexDelivery.PostalCode.{Store, Cache}
 
   # @radius 6371 #km
-  @radius 3959
+  @radius 3959 #miles
 
   def start_link do
     GenServer.start_link(__MODULE__, [], name: :postal_code_navigator)
