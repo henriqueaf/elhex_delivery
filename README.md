@@ -1,5 +1,7 @@
 # ElhexDelivery
 
+[![CircleCI](https://circleci.com/gh/henriqueaf/elhex_delivery/tree/master.svg?style=shield)](https://circleci.com/gh/henriqueaf/elhex_delivery/tree/master)
+
 **TODO: Add description**
 
 ## Installation
