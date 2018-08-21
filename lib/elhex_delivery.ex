@@ -1,18 +1,11 @@
 defmodule ElhexDelivery do
-  @moduledoc """
-  Documentation for ElhexDelivery.
-  """
+  use Application
 
-  @doc """
-  Hello world.
+  # Its executed when application starts:
+  # iex> Application.start(:elhex_delivery)
+  # {:error, {:already_staerted, :elhex_delivery}}
 
-  ## Examples
-
-      iex> ElhexDelivery.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    ElhexDelivery.Supervisor.start_link
   end
 end
