@@ -19,7 +19,6 @@ defmodule ElhexDelivery.PostalCode.Store do
     GenServer.call(:postal_code_store, {:get_geolocation, postal_code})
   end
 
-
   # Callbacks
 
   def handle_call({:get_geolocation, postal_code}, _from, geolocation_data) do
