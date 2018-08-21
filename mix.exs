@@ -14,6 +14,7 @@ defmodule ElhexDelivery.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {ElhexDelivery, []},
       extra_applications: [:logger]
     ]
   end
