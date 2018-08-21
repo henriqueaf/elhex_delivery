@@ -16,7 +16,6 @@ defmodule ElhexDelivery.PostalCode.Navigator do
 
   def get_distance(from, to) do
     GenServer.call(:postal_code_navigator, {:get_distance, from, to})
-    # do_get_distance(from, to)
   end
 
   #Callbacks
