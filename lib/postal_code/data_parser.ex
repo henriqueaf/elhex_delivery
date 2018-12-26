@@ -4,6 +4,8 @@ defmodule ElhexDelivery.PostalCode.DataParser do
   def parse_data do
     [_header | data_rows] = File.read!(@postal_codes_file_path) |> String.split("\n")
 
+    # Used Stream so that the code can run faster.
+    # Stream 'processes' are executed only on the last line 'Enum.into(%{})', all together
     data_rows
     |> Stream.map(&String.split(&1, "\t"))
     |> Stream.filter(&data_row?(&1))
