@@ -7,7 +7,7 @@ defmodule ElhexDelivery.PostalCode.Supervisor do
   end
 
   # It starts automatically ElhexDelivery.PostalCode.Store GenServer.
-  # So you can call the ElhexDelivery.PostalCode.Store methods withour call start_link before:
+  # So you can call the ElhexDelivery.PostalCode.Store methods without call start_link before:
 
   # iex> ElhexDelivery.PostalCode.Supervisor.start_link
   # iex> ElhexDelivery.PostalCode.Store.get_geolocation("94062")
