@@ -1,4 +1,8 @@
 defmodule ElhexDelivery.PostalCode.Navigator do
+  @moduledoc """
+  The Navigator module responsible to measure distance between postal codes.
+  """
+
   use GenServer
   alias :math, as: Math
   alias ElhexDelivery.PostalCode.{Store, Cache}
@@ -14,6 +18,14 @@ defmodule ElhexDelivery.PostalCode.Navigator do
     {:ok, []}
   end
 
+  @doc """
+  Measure distance between postal codes.
+
+  ## Examples
+    iex> ElhexDelivery.PostalCode.Navigator.start_link
+    iex> ElhexDelivery.PostalCode.Navigator.get_distance(94062, 94104)
+    26.75
+  """
   def get_distance(from, to) do
     GenServer.call(:postal_code_navigator, {:get_distance, from, to})
   end

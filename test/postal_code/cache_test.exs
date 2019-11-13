@@ -1,7 +1,7 @@
 defmodule ElhexDelivery.PostalCode.CacheTest do
   use ExUnit.Case
   alias ElhexDelivery.PostalCode.Cache
-  doctest ElhexDelivery
+  doctest ElhexDelivery.PostalCode.Cache
 
   test "get_and_set_distance" do
     p1 = "12345"

@@ -2,7 +2,7 @@ defmodule ElhexDelivery.PostalCode.DataParserTest do
   use ExUnit.Case
   alias ElhexDelivery.PostalCode.DataParser
 
-  doctest ElhexDelivery
+  doctest ElhexDelivery.PostalCode.DataParser
 
   test "parse_date" do
     geolocation_data = DataParser.parse_data

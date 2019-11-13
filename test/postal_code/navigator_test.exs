@@ -1,7 +1,7 @@
 defmodule ElhexDelivery.PostalCode.NavigatorTest do
   use ExUnit.Case
   alias ElhexDelivery.PostalCode.Navigator
-  doctest ElhexDelivery
+  doctest ElhexDelivery.PostalCode.Navigator
 
   describe "get_distance format tests" do
     test "postal code strings" do

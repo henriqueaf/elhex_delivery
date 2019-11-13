@@ -1,7 +1,7 @@
 defmodule ElhexDelivery.PostalCode.StoreTest do
   use ExUnit.Case
   alias ElhexDelivery.PostalCode.Store
-  doctest ElhexDelivery
+  doctest ElhexDelivery.PostalCode.Store
 
   test "get_geolocation" do
     # you can run tests without call start_lik because the application module already started all supervisors and GenServer's
